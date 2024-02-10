@@ -29,7 +29,7 @@ spring:
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/webflux
     username: <user>
-    password: <password<
+    password: <password>
   flyway:
     url: jdbc:postgresql://localhost:5432/webflux
     user: <user>
