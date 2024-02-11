@@ -9,14 +9,14 @@ data being returned.
 #### Noteworthy Dependencies
 
 For Reactive Web and Reactive JDBC
-```agsl
+```
 implementation 'org.springframework.boot:spring-boot-starter-webflux'
 implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
 runtimeOnly 'org.postgresql:r2dbc-postgresql'
 ```
 
 For Flyway migration tool
-```agsl
+```
 runtimeOnly 'org.flywaydb:flyway-core'
 implementation 'org.springframework:spring-jdbc'
 runtimeOnly 'org.postgresql:postgresql'
@@ -42,13 +42,13 @@ Please note that we are not using JpaRepository anymore. So tables wont get
 created automatically. We will have to have a DB migration tool like Flyway to create 
 tables etc.
 
-```agsl
+```
 public interface BookReactiveRepository extends ReactiveCrudRepository<Book, Integer>
 ```
 #### Controller
 Please note that controller method is returning a Flux and produces 
 media type of MediaType.TEXT_EVENT_STREAM_VALUE
-```agsl
+```
 @GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 public Flux<Book> getBooks(){
     log.info("Getting all books");
@@ -57,9 +57,13 @@ public Flux<Book> getBooks(){
 ```
 
 ### Getting Started
-
-```agsl
+Set up PostgreSQL
+```
 docker compose up -d
+```
+Run the application
+```agsl
+./gradlew bootRun
 ```
 
 Access the application
