@@ -4,6 +4,11 @@ Reactive web implementation allows to make non blocking calls to backend systems
 from happening in applications with high transaction volume. Reactive implementation also helps clients from getting overwhelmed when high volume of
 data being returned. 
 
+### Reactive Web in Action
+![webflux-edge.gif](src%2Fmain%2Fresources%2Fstatic%2Fwebflux-edge.gif)
+
+![webflux-curl.gif](src%2Fmain%2Fresources%2Fstatic%2Fwebflux-curl.gif)
+
 ### Key Considerations
 
 #### Noteworthy Dependencies
