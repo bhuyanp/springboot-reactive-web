@@ -19,13 +19,14 @@ import java.time.Duration;
 @Slf4j
 public class BookController {
     private final BookService bookService;
-    @GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @GetMapping(consumes=MediaType.APPLICATION_JSON_VALUE,  produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @ResponseStatus(HttpStatus.OK)
     public Flux<Book> getBooks(){
         log.info("Getting all books");
         return bookService.getBooks().delayElements(Duration.ofSeconds(1));
     }
 
-    @PostMapping
+    @PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<Book> addBooks(@RequestBody BookRequest bookRequest){
         return bookService.addBook(bookRequest);

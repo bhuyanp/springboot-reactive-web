@@ -66,8 +66,12 @@ Set up PostgreSQL
 ```
 docker compose up -d
 ```
+Test the application
+```
+./gradlew test
+```
 Run the application
-```agsl
+```
 ./gradlew bootRun
 ```
 
